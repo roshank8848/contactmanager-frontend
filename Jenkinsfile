@@ -9,21 +9,21 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
-            steps {
-                echo 'Installing Node.js dependencies...'
-                // Using npm ci (Clean Install) is standard practice for CI/CD pipelines
-                sh 'npm ci'
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         echo 'Installing Node.js dependencies...'
+        //         // Using npm ci (Clean Install) is standard practice for CI/CD pipelines
+        //         sh 'npm ci'
+        //     }
+        // }
 
-        stage('Build Frontend Asset') {
-            steps {
-                echo 'Building Vite production assets...'
-                // This triggers 'vite build' and outputs files into the /dist directory
-                sh 'npm run build'
-            }
-        }
+        // stage('Build Frontend Asset') {
+        //     steps {
+        //         echo 'Building Vite production assets...'
+        //         // This triggers 'vite build' and outputs files into the /dist directory
+        //         sh 'npm run build'
+        //     }
+        // }
 
         stage('Login to Docker Hub') {
             steps {
