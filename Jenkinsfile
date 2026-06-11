@@ -9,6 +9,7 @@ pipeline {
         // Define your Docker Hub repository and image tags
         IMAGE_REPO = 'prengineering' // Replace with your actual Docker Hub username/org
         IMAGE_TAG  = "0.0.${env.BUILD_NUMBER}"    // Uses the Jenkins build number as the unique tag
+        API_URL = "http://54.198.40.241:8000"
     }
 
     stages {
@@ -44,7 +45,7 @@ pipeline {
             steps {
                 echo 'Building frontend Docker image...'
                 // Builds and tags the image using your variables
-                sh "docker build --build-arg VITE_API_URL="http://54.198.40.241:8000" -t ${IMAGE_REPO}/frontend:${IMAGE_TAG} ."
+                sh "docker build --build-arg VITE_API_URL=${API_URL} -t ${IMAGE_REPO}/frontend:${IMAGE_TAG} ."
                 sh "docker push ${IMAGE_REPO}/frontend:${IMAGE_TAG}"
             }
         }
