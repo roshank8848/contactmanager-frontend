@@ -9,7 +9,7 @@ pipeline {
         // Define your Docker Hub repository and image tags
         IMAGE_REPO = 'prengineering' // Replace with your actual Docker Hub username/org
         IMAGE_TAG  = "0.0.${env.BUILD_NUMBER}"    // Uses the Jenkins build number as the unique tag
-        API_URL = "http://100.29.11.212:8000"
+        API_URL = "http://54.91.66.182:8000"
     }
 
     stages {
